@@ -1,0 +1,251 @@
+/* frontend/src/index.css */
+:root {
+  --bg-main: #0d1117;
+  --bg-panel: #161b22;
+  --border-color: #30363d;
+  --text-primary: #c9d1d9;
+  --text-secondary: #8b949e;
+  --accent: #58a6ff;
+  --success: #238636;
+  --danger: #da3633;
+  --font-mono: ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  background-color: var(--bg-panel);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.header-title {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.status-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--success);
+}
+
+.main-content {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.sidebar {
+  width: 320px;
+  background-color: var(--bg-panel);
+  border-right: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  gap: 24px;
+  overflow-y: auto;
+}
+
+.panel-title {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+select, textarea, button {
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  padding: 8px;
+  border-radius: 6px;
+  font-family: inherit;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+button {
+  background-color: var(--bg-panel);
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+button:hover:not(:disabled) {
+  background-color: var(--border-color);
+}
+
+button.primary {
+  background-color: var(--success);
+  color: #fff;
+  border-color: var(--success);
+}
+
+button.primary:hover:not(:disabled) {
+  background-color: #2ea043;
+}
+
+button.danger {
+  background-color: var(--bg-panel);
+  color: var(--danger);
+  border-color: var(--danger);
+}
+
+button.danger:hover:not(:disabled) {
+  background-color: var(--danger);
+  color: #fff;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+}
+
+.timeline-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.timeline-item.completed {
+  color: var(--success);
+}
+
+.timeline-item.current {
+  color: var(--accent);
+}
+
+.timeline-item.pending {
+  color: var(--text-secondary);
+}
+
+.timeline-item.failed {
+  color: var(--danger);
+}
+
+.workspace {
+  flex: 1;
+  padding: 24px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.card {
+  background-color: var(--bg-panel);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 16px;
+}
+
+.card-header {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.code-block {
+  background-color: var(--bg-main);
+  padding: 12px;
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  border: 1px solid var(--border-color);
+}
+
+.diff-addition {
+  color: #3fb950;
+  background-color: rgba(46, 160, 67, 0.15);
+  display: block;
+}
+
+.diff-removal {
+  color: #ff7b72;
+  background-color: rgba(248, 81, 73, 0.15);
+  display: block;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 8px 16px;
+  font-size: 0.9rem;
+}
+
+.info-label {
+  color: var(--text-secondary);
+}
+
+.validation-panel {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.button-group {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.error-banner {
+  background-color: rgba(218, 54, 51, 0.15);
+  border: 1px solid var(--danger);
+  color: #ff7b72;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+}
